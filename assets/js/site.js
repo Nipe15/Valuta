@@ -1,9 +1,16 @@
-/*  gode ideer og tips:
+function convert() {
+    let amount = parseFloat(document.getElementById("amount").value);
+    let fromCurrency = document.getElementById("fromCurrency").value;
+    let toCurrency = document.getElementById("toCurrency").value;
 
-hvis du vil begrænse antallet af decimaler på dit resultat, så brug methoden toFixed(antal decimaler)  eks.  result.toFixed(2) giver et resultat med 2 decimaler
+    let exchangeRate = {
+        USD: { EUR: 0.83, GBP: 0.72 },
+        EUR: { USD: 1.21, GBP: 0.87 },
+        GBP: { USD: 1.39, EUR: 1.15 },
+        DKK: { USD: 0.16, EUR: 0.13, GBP: 0.11 }
+    };
 
-hvis du vil have navnet på din valuta med fra options i dit select tag, så undersøg denne linje...
- let myCurrency = mySelectElement.options[mySelectElement.selectedIndex].innerText
- prøv evt. at consol logge mySelectElement.options, hvor mySelectElement er det select element du har fundet i din DOM med getElementById()
-
- */
+    let convertedAmount = amount * exchangeRate[fromCurrency][toCurrency];
+    let result = amount + fromCurrency + " = " + convertedAmount.toFixed(2) + toCurrency;
+    document.getElementById("result").innerHTML = result;
+}

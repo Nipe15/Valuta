@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <link rel="shortcut icon" href="#">
+    <link rel= "shortcut icon" href="#">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/site.css">
     <script src="assets/js/site.js" defer></script>
@@ -19,7 +19,31 @@
 <body>
 
 
+<br>
+<div class="converter">
+    <h2>Valutaomregner</h2>
+    <input type="number" id="amount" placeholder="Beløb i kroner">
+    <label for="amount"></label>
+    <select id="fromCurrency">
+        <option value="DKK">DKK</option>
+    </select>
+    <br>
+    <div class="Nummer">
+        
+       <p>veksel rate</p>
 
+    <select id="toCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+    </select>
+    <br><br>
+    <div class="Omregn">
+    <button onclick="convert()">Beregn</button>
+    <p id="result"></p>
+</div>
+</div>
+</div>
 </body>
 
 </html>
